@@ -7,6 +7,6 @@
 <title>Bem vindo</title>
 </head>
 <body>
-<a href="listaTarefas">Clique aqui para acessar a lista de tarefas</a>
+<a href="listaTarefas">Clique aqui - acessar a lista de tarefas</a>
 </body>
 </html>
