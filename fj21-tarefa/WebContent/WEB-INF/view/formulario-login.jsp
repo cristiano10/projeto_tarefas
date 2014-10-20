@@ -7,7 +7,7 @@
 <title>Login - Tarefas</title>
 </head>
 <body>
-Login<br/>
+Faça seu login<br/>
 <form action="efetuaLogin" method="post">
 Login: <input type="text" name="usuario"/><br/>
 Senha: <input type="password" name="senha"/><br/>
