@@ -7,6 +7,6 @@
 <title>Teste MVC</title>
 </head>
 <body>
-	<h3>Spring MVC Teste</h3>
+	<h3>Testando o Spring MVC</h3>
 </body>
 </html>
