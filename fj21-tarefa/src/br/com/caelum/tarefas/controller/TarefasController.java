@@ -1,29 +1,25 @@
 package br.com.caelum.tarefas.controller;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.caelum.tarefas.dao.JdbcTarefaDao;
+import br.com.caelum.tarefas.dao.TarefaDao;
 import br.com.caelum.tarefas.modelo.Tarefa;
 
+@Transactional
 @Controller
-@Scope("request")
 public class TarefasController {
 	
-	private JdbcTarefaDao dao;
 	
 	@Autowired
-	public TarefasController(JdbcTarefaDao dao){
-		this.dao = dao;
-	}
-	
+	TarefaDao dao;
 	
 	@RequestMapping("novaTarefa")
 	public String form(){
@@ -45,7 +41,7 @@ public class TarefasController {
 	@RequestMapping("listaTarefas")
 	public String lista(Model model){
 		
-		model.addAttribute("tarefas", dao.getLista());
+		model.addAttribute("tarefas", dao.lista());
 		return "tarefa/lista";
 	}
 
@@ -60,7 +56,7 @@ public class TarefasController {
 	@RequestMapping("mostraTarefa")
 	public String mostra(Long id, Model model){
 		
-		model.addAttribute("tarefa",dao.getBusca(id));
+		model.addAttribute("tarefa",dao.buscaPorId(id));
 		return "tarefa/mostra";
 	}
 	
