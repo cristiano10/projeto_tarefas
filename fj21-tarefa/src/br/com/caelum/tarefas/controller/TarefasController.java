@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.com.caelum.tarefas.dao.TarefaDao;
 import br.com.caelum.tarefas.modelo.Tarefa;
 
-@Transactional
 @Controller
+@Transactional
 public class TarefasController {
 	
 	
@@ -40,7 +40,6 @@ public class TarefasController {
 	
 	@RequestMapping("listaTarefas")
 	public String lista(Model model){
-		
 		model.addAttribute("tarefas", dao.lista());
 		return "tarefa/lista";
 	}
